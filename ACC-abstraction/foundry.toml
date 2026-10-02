@@ -1,0 +1,15 @@
+[profile.default]
+src = "src/zksync"
+out = "out"
+libs = ["lib"]
+
+remappings = [
+    "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+    "@matterlabs/era-contracts/=lib/era-contracts/",
+]
+
+via_ir = true
+optimizer = true
+
+[profile.default.zksync]
+bytecode_hash = "none"

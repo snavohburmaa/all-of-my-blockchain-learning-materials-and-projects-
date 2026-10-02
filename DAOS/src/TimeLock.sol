@@ -1,0 +1,14 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+import {TimelockController} from "lib/openzeppelin-contracts/contracts/governance/TimelockController.sol";
+
+contract TimeLock is TimelockController {
+    //mindelay -> how long have to wait bf executing
+    //proposers -> list of addresses that can propose
+    // executers -> list of addresses that can execute
+
+    constructor(uint256 minDelay, address[] memory proposers, address[] memory executors)
+        TimelockController(minDelay, proposers, executors, msg.sender)
+    {}
+}
